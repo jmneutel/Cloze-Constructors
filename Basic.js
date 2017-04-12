@@ -3,12 +3,10 @@ var inquirer = require("inquirer");
 var input2 = process.argv[3].toLowerCase();
 var input3 = process.argv[4];
 var input4 = process.argv[5];
-var input5 = process.argv[6];
-
 
 function basicFunction() {
 
-    if (input2 === "random" && input4 === undefined && input5 === undefined) {
+    if (input2 === "random" && input4 === undefined) {
 
         function CreateCard(front, back) {
 
@@ -57,7 +55,7 @@ function basicFunction() {
         });
         // console.log(parseInt(input2));
 
-    } else if (input2 === "first-add" && input4 === undefined && input5 === undefined) {
+    } else if (input2 === "first-add" && input4 === undefined) {
 
         var count = 0;
         var cardArr = [];
@@ -105,7 +103,7 @@ function basicFunction() {
         getInfo();
 
 
-    } else if (input2 === "add" && input4 === undefined && input5 === undefined) {
+    } else if (input2 === "add" && input4 === undefined) {
 
         var count = 0;
         var cardArr = [];
@@ -139,11 +137,11 @@ function basicFunction() {
                 });
 
             } else {
-                console.log(parse);
+                // console.log(parse);
                 var wow = JSON.parse(parse);
                 // console.log(wow);
                 cardArr.push.apply(cardArr, wow);
-                console.log(cardArr);
+                // console.log(cardArr);
 
                 fs.writeFile("log.txt", JSON.stringify(cardArr), function(err) {
 
@@ -175,9 +173,9 @@ function basicFunction() {
             }
         })
 
-    } else if (input2 === "easy" && input3 === "read" && input4 === "front") {
+    } else if (input2 === "read"  && input3 === "front") {
 
-        var index = parseInt(input5) - 1;
+        var index = parseInt(input4) - 1;
 
         var printFront = function() {
 
@@ -201,9 +199,9 @@ function basicFunction() {
 
         printFront();
 
-    } else if (input2 === "easy" && input3 === "read" && input4 === "back") {
+    } else if (input2 === "read" && input3 === "back") {
 
-        var index = parseInt(input5) - 1;
+        var index = parseInt(input4) - 1;
 
         var printBack = function() {
 
