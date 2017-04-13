@@ -56,6 +56,56 @@ function clozeFunction() {
         getInfo();
 
 
+    } else if (input2 === "random" && input4 === undefined) {
+
+        function CreateCard(cloze, partial) {
+
+            this.cloze = cloze;
+            this.partial = " ..." + partial;
+            this.full = cloze + " " + partial;
+
+        }
+
+
+        fs.readFile("clozeLog.txt", "utf8", function(err, data) {
+
+            if (err) {
+
+                console.log(err);
+            } else {
+
+                var cardArr = JSON.parse(data);
+                // console.log(cardArr);
+                var printCounter = 0;
+
+                function printCount() {
+
+                    if (printCounter <= cardArr.length) {
+                        printFront();
+                        printCounter++;
+                        setTimeout(function() { printCount() }, 6000);
+                    }
+                };
+
+                function printFront() {
+
+                    var randomCard = Math.floor(Math.random() * (cardArr.length));
+
+                    console.log(" ");
+                    console.log("------------------");
+
+                    console.log("Finish this sentence: " + cardArr[randomCard].partial);
+                    setTimeout(function() { console.log("Answer: " + cardArr[randomCard].cloze), console.log("Full Answer: " + cardArr[randomCard].full) }, 5000);
+                    setTimeout(function() { console.log("--------------------"), console.log(" "), cardArr.splice(randomCard, 1); }, 5100);
+
+                };
+
+                printCount();
+
+            }
+        });
+
+
     } else if (input2 === "add" && input4 === undefined) {
 
         var count = 0;
@@ -127,7 +177,7 @@ function clozeFunction() {
             };
         });
 
-    } else if (input2 === "read"  && input3 === "cloze") {
+    } else if (input2 === "read" && input3 === "cloze") {
 
         var index = parseInt(input4) - 1;
 
