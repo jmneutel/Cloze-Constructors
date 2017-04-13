@@ -2,20 +2,20 @@
 
 ## Description on how to use the app
 
-- Firstly, the user needs to choose whether they want to use the "basic" flashcards setting or the "cloze" flashcards setting.
+* Firstly, the user needs to choose whether they want to use the "basic" flashcards setting or the "cloze" flashcards setting.
   *In order to use the basic flashcards, the user needs to type basic into the command line.
   *In order to use the cloze flashcards, the user needs to type cloze into the command line. 
-- Next, the user will need to add flashcards to the system in order to use it. To do this, have the second command in the CLI should be "first-add", with the third command being the number of flashcards they wish to add.
+* Next, the user will need to add flashcards to the system in order to use it. To do this, have the second command in the CLI should be "first-add", with the third command being the number of flashcards they wish to add.
   *For example: node CLI.js basic first-add 2
   *This would add 2 basic flashcards.
-- If you want to add more cards after this first command, instead of using the first-add command, use the command add, and the number of cards you wish to add.
+* If you want to add more cards after this first command, instead of using the first-add command, use the command add, and the number of cards you wish to add.
   *For example: node CLI.js basic add 2
   *This would add 2 additonal cards.
   *Be sure to use the first-add command BEFORE you use the add command to prevent errors.
-- Once you have cards made, in order to quiz yourself, use the command random.
+* Once you have cards made, in order to quiz yourself, use the command random.
   *For example: node CLI.js basic random
   *This will randomly select a card, give you the front of the card, followed by five seconds to think of the answer to the card, and then the back of the card. 
-- In order to view the front or back of the card, use the following commands:
+* In order to view the front or back of the card, use the following commands:
   *For example: node CLI.js basic read front 1
   *The above command would show the front of the first flashcard made.
   *For example: node CLI.js basic read back 2
