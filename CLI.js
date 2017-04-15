@@ -2,7 +2,6 @@ var input1 = process.argv[2].toLowerCase();
 
 var fs = require('fs');
 
-
 if (input1 === "basic") {
 
 	var basic = require("./Basic");
